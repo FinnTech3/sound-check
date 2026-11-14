@@ -1,0 +1,89 @@
+{
+  "file": "hit_late.wav",
+  "estimates": [
+    "loudness",
+    "tempo",
+    "spectrum",
+    "summary"
+  ],
+  "findings": [
+    {
+      "kind": "sync",
+      "message": "cut at 1.2 s: 80 ms late (tolerance 40 ms)"
+    }
+  ],
+  "notes": [],
+  "format": {
+    "sample_rate": 44100,
+    "channels": 1,
+    "bit_depth": 16,
+    "sample_format": "int",
+    "duration_s": 3.0,
+    "analysed_s": 3.0
+  },
+  "level": {
+    "peak_dbfs": -6.0,
+    "peak_time_s": 1.2842,
+    "rms_dbfs": -29.22,
+    "dc_offset": 0.00024
+  },
+  "loudness": {
+    "active_rms_dbfs": -22.91,
+    "basis": "plain RMS, not LUFS"
+  },
+  "clipping": {
+    "runs": 0,
+    "longest_run": 0,
+    "full_scale_samples": 0,
+    "first_s": null,
+    "over_full_scale": false
+  },
+  "silence": {
+    "threshold_dbfs": -60.0,
+    "leading_s": 1.2802,
+    "trailing_s": 0.9048,
+    "active_s": 0.818,
+    "gaps_total": 0,
+    "gaps": []
+  },
+  "events": {
+    "count": 1,
+    "onsets_s": [
+      1.2802
+    ],
+    "attack_ms": 4.0,
+    "decay_ms": 320.0
+  },
+  "tempo": {
+    "bpm": null,
+    "confidence": 0.0,
+    "note": "not enough rhythm: 1 onsets in 3.0 s (needs 6+)"
+  },
+  "spectrum": {
+    "centroid_hz": 1324.6,
+    "band_percent": {
+      "bass": 79.9,
+      "low_mid": 1.3,
+      "mid": 4.8,
+      "high_mid": 5.9,
+      "high": 8.1
+    },
+    "peakiness_log10": 2.69,
+    "frames_used": 23,
+    "sweep_hz": null,
+    "strongest_hz": 64.7
+  },
+  "stereo": null,
+  "sync": {
+    "tolerance_ms": 40.0,
+    "pass": false,
+    "cuts": [
+      {
+        "cut_s": 1.2,
+        "offset_ms": 80.2,
+        "pass": false
+      }
+    ]
+  },
+  "summary": "short transient, 320 ms decay, warm, tonal near 65 Hz"
+}

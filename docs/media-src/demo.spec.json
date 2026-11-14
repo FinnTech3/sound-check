@@ -1,0 +1,65 @@
+{
+  "title": "sound-check",
+  "cwd": "/tmp/sc-demo",
+  "width": 990,
+  "rows": 22,
+  "fontSize": 14,
+  "wrap": 112,
+  "typeSeconds": 1.4,
+  "highlight": [
+    {
+      "re": "^FINDING",
+      "cls": "red"
+    },
+    {
+      "re": "^sync .*pass False",
+      "cls": "red"
+    },
+    {
+      "re": "^sync .*pass True",
+      "cls": "green"
+    },
+    {
+      "re": "^findings: none",
+      "cls": "green"
+    },
+    {
+      "re": "^clipping .*runs [1-9]",
+      "cls": "red"
+    },
+    {
+      "re": "^audio_probe:",
+      "cls": "bold"
+    }
+  ],
+  "steps": [
+    {
+      "note": "# The hit should land on the cut at 1.20 s. Make a sound, then measure it."
+    },
+    {
+      "cmd": "python3 sfx_synth.py make hit --out late.wav --duration 3 --param delay_ms=1280",
+      "hold": 0.5
+    },
+    {
+      "cmd": "python3 audio_probe.py probe late.wav --cuts 1.20 --tolerance-ms 40",
+      "expectExit": [
+        1
+      ],
+      "hold": 1.6
+    },
+    {
+      "clear": true
+    },
+    {
+      "note": "# 80 ms late. Start it at 1200 ms, write a new file, probe again."
+    },
+    {
+      "cmd": "python3 sfx_synth.py make hit --out hit.wav --duration 3 --param delay_ms=1200",
+      "hold": 0.5
+    },
+    {
+      "cmd": "python3 audio_probe.py probe hit.wav --cuts 1.20 --tolerance-ms 40",
+      "hold": 3.0
+    }
+  ]
+}

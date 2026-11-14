@@ -1,0 +1,109 @@
+{
+ "cut_s": 1.2,
+ "tolerance_ms": 40,
+ "sync": {
+  "late.wav": {
+   "tolerance_ms": 40.0,
+   "pass": false,
+   "cuts": [
+    {
+     "cut_s": 1.2,
+     "offset_ms": 80.2,
+     "pass": false
+    }
+   ]
+  },
+  "hit.wav": {
+   "tolerance_ms": 40.0,
+   "pass": true,
+   "cuts": [
+    {
+     "cut_s": 1.2,
+     "offset_ms": 0.2,
+     "pass": true
+    }
+   ]
+  }
+ },
+ "clipping": {
+  "thump_hot.wav": {
+   "runs": 12,
+   "longest_run": 156,
+   "full_scale_samples": 1649,
+   "first_s": 0.0008,
+   "over_full_scale": false
+  },
+  "thump.wav": {
+   "runs": 0,
+   "longest_run": 0,
+   "full_scale_samples": 0,
+   "first_s": null,
+   "over_full_scale": false
+  }
+ },
+ "presets": {
+  "click": {
+   "duration_s": 0.12,
+   "peak_dbfs": -6.0,
+   "decay_ms": 10.0,
+   "centroid_hz": 6337.8,
+   "summary": "very short click, very bright, tonal near 3501 Hz"
+  },
+  "tick": {
+   "duration_s": 0.15,
+   "peak_dbfs": -6.0,
+   "decay_ms": 30.0,
+   "centroid_hz": 1950.1,
+   "summary": "very short click, mid-range, tonal near 1802 Hz"
+  },
+  "pop": {
+   "duration_s": 0.25,
+   "peak_dbfs": -6.0,
+   "decay_ms": 65.0,
+   "centroid_hz": 617.1,
+   "summary": "short transient, 65 ms decay, warm, tonal and noisy"
+  },
+  "thump": {
+   "duration_s": 0.6,
+   "peak_dbfs": -6.0,
+   "decay_ms": 185.0,
+   "centroid_hz": 79.0,
+   "summary": "short transient, 185 ms decay, dark, tone sweeping 86 to 43 Hz"
+  },
+  "whoosh": {
+   "duration_s": 0.9,
+   "peak_dbfs": -6.0,
+   "decay_ms": 325.0,
+   "centroid_hz": 6057.1,
+   "summary": "swell building for 365 ms, then fading in 325 ms, very bright, noise-like"
+  },
+  "riser": {
+   "duration_s": 2.0,
+   "peak_dbfs": -6.0,
+   "decay_ms": null,
+   "centroid_hz": 3379.8,
+   "summary": "swell building for 1862 ms, mid-range, tone sweeping 452 to 1938 Hz"
+  },
+  "hit": {
+   "duration_s": 1.0,
+   "peak_dbfs": -6.0,
+   "decay_ms": 330.0,
+   "centroid_hz": 1172.5,
+   "summary": "short transient, 330 ms decay, warm, tonal near 65 Hz"
+  },
+  "chime": {
+   "duration_s": 1.6,
+   "peak_dbfs": -6.0,
+   "decay_ms": 895.0,
+   "centroid_hz": 992.2,
+   "summary": "long-tailed transient, 895 ms decay, warm, tonal near 881 Hz"
+  },
+  "drop": {
+   "duration_s": 1.2,
+   "peak_dbfs": -6.0,
+   "decay_ms": 810.0,
+   "centroid_hz": 357.0,
+   "summary": "long-tailed transient, 810 ms decay, dark, tone sweeping 301 to 43 Hz"
+  }
+ }
+}

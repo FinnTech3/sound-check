@@ -1,0 +1,49 @@
+{
+  "title": "sound-check",
+  "cwd": "/tmp/sc-demo",
+  "width": 990,
+  "rows": 22,
+  "fontSize": 14,
+  "wrap": 112,
+  "typeSeconds": 1.4,
+  "highlight": [
+    {
+      "re": "^FINDING",
+      "cls": "red"
+    },
+    {
+      "re": "^sync .*pass False",
+      "cls": "red"
+    },
+    {
+      "re": "^sync .*pass True",
+      "cls": "green"
+    },
+    {
+      "re": "^findings: none",
+      "cls": "green"
+    },
+    {
+      "re": "^clipping .*runs [1-9]",
+      "cls": "red"
+    },
+    {
+      "re": "^audio_probe:",
+      "cls": "bold"
+    }
+  ],
+  "steps": [
+    {
+      "note": "# A sound made 8 dB too hot. Does the probe catch it?"
+    },
+    {
+      "cmd": "python3 sfx_synth.py make thump --out thump_hot.wav --param level_db=8"
+    },
+    {
+      "cmd": "python3 audio_probe.py probe thump_hot.wav",
+      "expectExit": [
+        1
+      ]
+    }
+  ]
+}

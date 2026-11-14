@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sound-check"
+version = "1.0.0"
+description = "Measure a WAV file and make simple sounds from code, so an agent has evidence about audio it cannot hear. No dependencies."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+authors = [{ name = "FinnTech3" }]
+keywords = ["audio", "wav", "sound-effects", "testing", "ai-agent-skill"]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5", "pyyaml>=6"]
+
+[project.scripts]
+audio-probe = "audio_probe:main"
+sfx-synth = "sfx_synth:main"
+
+[project.urls]
+Homepage = "https://github.com/FinnTech3/sound-check"
+
+[tool.setuptools]
+py-modules = ["audio_probe", "sfx_synth"]
+package-dir = { "" = "agensi/sound-check/scripts" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["agensi/sound-check/scripts", "tools"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+# B905 asks for zip(strict=...) everywhere; the scripts have a hard size budget and every zip pairs equal lengths.
+ignore = ["B905"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["audio_probe", "sfx_synth", "agensi_build", "conftest"]
+
+[tool.ruff.lint.per-file-ignores]
+"tools/**" = ["E501"]
+"tests/**" = ["E501"]
+"docs/**" = ["E501"]
